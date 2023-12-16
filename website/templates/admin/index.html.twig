@@ -1,0 +1,78 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Globe Correcteur | Admin{% endblock %}
+
+{% block pagetitle %}Accueil{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active">Accueil</li>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ customers }}</h3>
+                    <p>Client(s)</p>
+                </div>
+                <div class="icon">
+                    <i class="nav-icon fas fa-users"></i>
+                </div>
+                <a href="{{ path('admin_customers') }}" class="small-box-footer">
+                    Clients <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{ orders }}</h3>
+                    <p>Commande(s)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-file-invoice"></i>
+                </div>
+                <a href="{{ path('admin_orders') }}" class="small-box-footer">
+                    Factures <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>{{ prices }}</h3>
+                    <p>Tarifs</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <a href="{{ path('admin_prices') }}" class="small-box-footer">
+                    Tarifs <i class="fas fa-arrow-circle-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ bank | number_format(0, ',', ' ')  }} $</h3>
+                    <p>Banque</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <a href="{{ path('admin_bank') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

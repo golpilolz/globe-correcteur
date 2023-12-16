@@ -1,0 +1,108 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Globe Correcteur | Admin{% endblock %}
+
+{% block pagetitle %}Banque{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{{ path('admin_home') }}">Accueil</a></li>
+    <li class="breadcrumb-item active">Banque</li>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Exporter</h3>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col">
+                        {{ form_row(form.month) }}
+                        </div>
+                        <div class="col">
+                        {{ form_row(form.year) }}
+                        </div>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary mr-3">
+                                <i class="fas fa-file-export"></i>
+                                Exporter
+                            </button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+
+                    {# <form action="{{ path('admin_bank_export') }}">
+                        <div class="form-group">
+                            <label for="month">Année</label>
+                            <select id="month" name="month">
+                                <option value="1">Janvier</option>
+                                <option value="2">Février</option>
+                                <option value="3">Mars</option>
+                                <option value="4">Avril</option>
+                                <option value="5">Mai</option>
+                                <option value="6">Juin</option>
+                                <option value="7">Juillet</option>
+                                <option value="8">Août</option>
+                                <option value="9">Septembre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Décembre</option>
+                            </select>
+                        </div>
+
+                    </form> #}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-start align-items-center">
+                    <a href="{{ path('admin_bank_add-record') }}" class="btn btn-primary mr-3">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                    <h3 class="card-title">Enregistrements</h3>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Libellé</th>
+                            <th>Opération</th>
+                            <th>Date</th>
+                            <th>Employé</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for record in records %}
+                            <tr>
+                                <td>{{ record.libelle }}</td>
+                                <td class="text-{% if record.operation == 'debit' %}danger{% else %}success{% endif %}">
+                                    {{ record.amount | number_format(0, ',', ' ') }} $
+                                </td>
+                                <td>
+                                    {{ record.createdAt|date('d/m/y H:i') }}
+                                </td>
+                                <td>
+                                    {{ record.user.employee.name }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

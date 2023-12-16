@@ -1,0 +1,5 @@
+services:
+  php-fpm:
+    build:
+      context: ./.docker/php
+      target: dev
