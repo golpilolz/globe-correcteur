@@ -305,12 +305,18 @@ class AdminController extends AbstractController
     }
 
     #[Route('/prices/add', name: 'prices_add')]
-    public function pricesAdd(Request $request, EntityManagerInterface $em): Response
+    public function pricesAdd(Request $request, EntityManagerInterface $em, FileUploader $fileUploader): Response
     {
         $price = new Price();
         $form = $this->createForm(PriceType::class, $price);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+          /** @var UploadedFile $file */
+          $file = $form->get('image')->getData();
+          if ($file) {
+            $imageFilename = $fileUploader->upload($file);
+            $price->setImage($imageFilename);
+          }
             $em->persist($price);
             $em->flush();
 
