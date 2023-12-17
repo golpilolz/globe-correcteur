@@ -61,3 +61,6 @@ RUN apk --no-cache add  \
     && echo "xdebug.idekey = PHPSTORM" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 USER $UNAME:$UNAME
+
+FROM dev as dev-root
+USER root:root
