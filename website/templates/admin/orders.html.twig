@@ -33,10 +33,10 @@
 {% block js %}
     <script>
         $(function () {
-            $("#example1").DataTable({
+            $("#table-orders").DataTable({
                 "responsive": true, "lengthChange": false, "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            }).buttons().container().appendTo('#table-orders_wrapper .col-md-6:eq(0)');
         });
     </script>
 {% endblock %}
@@ -51,7 +51,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
+            <table id="table-orders" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>Client</th>
