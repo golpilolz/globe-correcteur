@@ -17,13 +17,13 @@ class PriceType extends AbstractType
             ->add('image', DropzoneType::class, [
                 'label' => 'Image',
                 'mapped' => false,
-                'required' => true,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'Choose an image',
                 ],
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
+                        'maxSize' => '2048k',
                         'mimeTypes' => [
                             'image/png',
                             'image/jpeg',
