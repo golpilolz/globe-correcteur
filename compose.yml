@@ -22,9 +22,9 @@ services:
       SERVER_NAME: localhost, nginx:80
       TRUSTED_PROXIES: 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
       TRUSTED_HOSTS: ^gc-compta\.local|localhost|php$$
-      DATABASE_URL: mysql://app:app@db:3306/app?serverVersion=11.0.3-MariaDB&charset=utf8mb4
+      DATABASE_URL: mysql://app:app@db:3306/app?serverVersion=11.0.4-MariaDB&charset=utf8mb4
   db:
-    image: mariadb:11.0.3
+    image: mariadb:11.0.4
     volumes:
       - ./.docker/db/data:/var/lib/mysql
     ports:
