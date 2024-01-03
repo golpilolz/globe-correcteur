@@ -1,0 +1,27 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Globe Correcteur | Admin{% endblock %}
+
+{% block pagetitle %}Banque{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{{ path('admin_home') }}">Accueil</a></li>
+    <li class="breadcrumb-item active">Voitures</li>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Voitures</h3>
+                </div>
+                <div class="card-body">
+                    {{ component('CarCustoPriceForm', {
+                        form: form
+                    }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

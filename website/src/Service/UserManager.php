@@ -42,4 +42,16 @@ class UserManager
 
         return $plaintextPassword;
     }
+
+    public function updatePassword(User $user): string {
+        $plaintextPassword = $this->randomizer->getBytesFromString(self::PWD_STRING, self::PWD_LENGTH);
+        $hashedPassword = $this->passwordHasher->hashPassword(
+            $user,
+            $plaintextPassword
+        );
+        $user->setPassword($hashedPassword);
+        $this->em->persist($user);
+        $this->em->flush();
+        return $plaintextPassword;
+    }
 }

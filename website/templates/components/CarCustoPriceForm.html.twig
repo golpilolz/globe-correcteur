@@ -1,0 +1,14 @@
+<div {{ attributes }}>
+    {{ price }}
+
+    {{ form_start(form, {
+        attr: {
+            'data-action': 'live#action',
+            'data-action-name': 'prevent|save'
+        }
+    }) }}
+    {{ form_rest(form) }}
+
+    <button>Save</button>
+    {{ form_end(form) }}
+</div>
