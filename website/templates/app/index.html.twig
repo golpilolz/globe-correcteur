@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        <div class="flex justify-center">
-            <img src="{{ asset('images/logo-grand.png') }}" alt="Logo Globe Correcteur">
+    <div class="grid grid-cols-1">
+        <div class="flex justify-center mb-8">
+            <h1>
+                <img src="{{ asset('images/logo-grand.png') }}" alt="Globe Correcteur">
+            </h1>
         </div>
-        <div class="h-full flex flex-col justify-between">
-            <h1 class="text-center mt-8">Globe Correcteur</h1>
-            <p class="mx-3">
+
+        <div class="mx-4 p-8 text-slate-700 dark:bg-slate-800 dark:text-slate-400">
+            <div class="float-left mr-6">
+                <div class="aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-96 {# sm:w-44 #}">
+                    <img class="object-cover rounded-lg" src="{{ asset('images/home-1.jpg') }}"
+                         alt="Bureaux Globe Correcteur">
+                </div>
+            </div>
+            <p>
                 Bienvenue chez Globe Correcteur, votre partenaire de confiance pour la perfection linguistique !
                 Chez nous, nous comprenons l'importance de présenter un contenu impeccable,dépourvu de fautes
                 d'orthographe,
@@ -16,30 +24,32 @@
                 cherchant
                 à communiquer de manière claire et professionnelle, nous sommes là pour vous aider.
             </p>
-        </div>
-    </div>
-    <div class="grid grid-cols-1">
-        <div>
-            <p class="mb-8 mx-3">
+            <p class="mt-8">
                 Nos services de relecture et de correction sont assurés par une équipe compétente et passionnée,
                 composée de professionnels de la langue. Chacun de nos réviseurs est minutieusement sélectionné pour ses
                 compétences linguistiques exceptionnelles, son expertise dans différents domaines et sa rigueur dans la
                 détection des erreurs. Nous travaillons avec un engagement absolu envers la qualité, veillant à ce que
                 chaque document que nous traitons soit poli et irréprochable sur le plan linguistique.
             </p>
-            <p class="mb-8 mx-3">
+            <div class="float-right ml-6">
+                <div class="aspect-w-4 aspect-h-5 sm:aspect-w-16 sm:aspect-h-9 w-96 {# sm:w-44 #}">
+                    <img class="object-cover rounded-lg" src="{{ asset('images/home-2.jpg') }}"
+                         alt="Séance de travail">
+                </div>
+            </div>
+            <p class="mt-8">
                 Que ce soit pour des documents professionnels tels que des rapports d'entreprise, des présentations, des
                 courriels ou des contenus académiques tels que des thèses, mémoires et essais, nous sommes prêts à vous
                 offrir un service personnalisé. Nous comprenons que chaque projet est unique, et c'est pourquoi nous
                 adaptons nos services à vos besoins spécifiques.
             </p>
-            <p class="mb-8 mx-3">
+            <p class="mt-8">
                 En choisissant Globe Correcteur, vous optez pour la tranquillité d'esprit. Notre processus de relecture
                 est efficace et précis, garantissant une correction méticuleuse tout en préservant votre style
                 d'écriture personnel. Nous respectons les délais et nous nous engageons à vous fournir un travail de
                 qualité supérieure.
             </p>
-            <p class="mx-3">
+            <p class="mt-8">
                 Ne laissez pas les petites erreurs gâcher l'impact de votre message. Faites confiance à Globe Correcteur
                 pour faire briller vos écrits. Contactez-nous dès aujourd'hui pour discuter de la manière dont nous
                 pouvons améliorer la clarté et la précision de vos documents. Nous sommes impatients de collaborer avec
